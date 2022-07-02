@@ -1,0 +1,98 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+<!doctype html>
+
+{% if message %}
+ <h4>{{message}}!</h4>
+{% endif %}
+
+{% if messagea %}
+ <h4>{{messagea}}!</h4>
+{% endif %}
+
+{% if messaged %}
+ <h4>{{messaged}}!</h4>
+{% endif %}
+{% if messager %}
+ <h4>{{messager}}!</h4>
+{% endif %}
+<title>Photoshare</title>
+
+<br>
+{% if name %}
+ <h7> Welcome {{name}}!</h7>
+{% endif %}
+<br>
+{% if hometown %}
+ <h7> Hometown: {{hometown}}</h7>
+{% endif %}
+<br>
+{% if DOB %}
+ <h7> My Birthday: {{DOB}}</h7>
+{% endif %}
+<br>
+{% if gender %}
+ <h7> I am {{gender}}</h7>
+{% endif %}
+
+{% if photos %}
+<h2>Here are your photos</h2>
+    <ul>
+    {% for photo in photos %}
+        {% if comments %}
+            {% for comment in comments %}
+
+                <li>{{photo[1]}}<br>
+                <img src='data:image/jpg;base64, {{ base64.b64encode(photo[0]).decode("ascii") }}'/></li>
+                <h5> Comment: {{ comment[0] }}</h5>
+            {% endfor %}
+        {% else %}
+            <li>{{photo[1]}}<br>
+            <img src='data:image/jpg;base64, {{ base64.b64encode(photo[0]).decode("ascii") }}'/></li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% endif %}
+
+{% if message is none %}
+  <p>You should <a href='/login'>login!</a></p>
+{% else %}
+  <p> Go to <a href='/profile'>profile?</a></p>
+  <p> Influencers:</p>
+    <ol>
+        <li>  </li>
+        <li>  </li>
+        <li> </li>
+        <li>  </li>
+        <li>  </li>
+        <li>  </li>
+        <li>  </li>
+        <li>  </li>
+        <li>  </li>
+        <li>  </li>
+    </ol>
+{% endif %}
+
+
+<ul>
+<li><a href="/photos">Photos </a></li>
+<li><a href='/comment'>Comment</a></li>
+<li><a href='/myAlbums'>Albums</a></li>
+<li><a href="/searchTagged">Tagged Photos </a></li>
+<li><a href='/register'>Sign Up</a></li>
+<li><a href='/login'>Login</a></li>
+<li><a href='/search'> Search </a></li>
+<li><a href='/upload'>Upload a photo</a> </li>
+<li><a href='/friends'> Add Friends</a></li>
+<li><a href="/likePhoto"> Like </a></li>
+<li><a href='/tag'> Tag </a></li>
+<li><a href="/listOfLikes"> Liked Posts </a></li>
+<li><a href="/taggedPhotos"> See my tagged photos </a></li>
+<li><a href='/allComments'>View your Comments</a></li>
+<li><a href="/deletePhoto"> Delete A Photo </a></li>
+<li><a href="/removedTags"> Delete Tags </a></li>
+<li><a href='/album'>Create Album </a></li>
+<li><a href='/viewTag'> Look at Tags</a></li>
+<li><a href='/selectPhotosforAlbum'>Select Photos Into Albums</a></li>
+<li><a href='/deleteAlbum'>Delete an Album</a></li>
+<li><a href='/logout'>Logout</a></li>
+</ul>

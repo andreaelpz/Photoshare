@@ -1,0 +1,19 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+<head>
+    <title>Albums </title>
+</head>
+{% if album %}
+<h2>Here are your albums!</h2>
+    <ul>
+    {% for albums in album %}
+    <!-- /albumPOST should be replaced with the directory of what that album contains-->
+        <!-- <li>{{albums[0]}}</li> <br> -->
+        <!-- <li><a href="/albumPOST">{{album[0]}}</a></li><br> -->
+        <li><a href="/willDisplay/{{album[1]}}">{{albums[0]}}</a></li><br>
+    {% endfor %}
+    </ul>
+{% endif %}
+<li><a href='/'>Home</a></li>
+    
+
+

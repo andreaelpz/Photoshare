@@ -1,0 +1,16 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+<head>
+    <title>Photo Tags</title>
+  </head>
+  <body>
+    <div>
+      <h1> Photos You have tagged</h1>
+      {% if photo %}
+        {% for photos in photo %}
+        <img src='data:image/png;base64, {{picture[0]}}'/><br>
+        {% endfor %}
+        {% endif %}
+        <li><a href='/'>Home</a></li>
+        </body>
+
+  

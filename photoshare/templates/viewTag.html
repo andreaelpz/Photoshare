@@ -1,0 +1,24 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+<head>
+    <title> Tag  </title>
+  </head>
+    <div class = "title">
+      <h1> Tags  </h1>
+    </div>
+  <body>
+    <div>
+      <h2> Which tag do you want to see? </h2>
+      {% if tags %}
+        {% for tag in tags %}
+        <form method="post" enctype="multipart/form-data" action="/viewTag">
+        <div class ="form-group">
+        <input type="radio"
+               name= "tagName"
+               value=
+               {{tag[0]}}>{{tag[0]}}<br>
+        </div>
+        {% endfor %}
+      {% endif %}
+    <input type="submit" value="Search" />
+      </div>
+  </body>

@@ -1,0 +1,38 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+<!-- delete albums-->
+
+<!-- TODO: check to see if name should be albumName or albumname-->
+<head>
+    <title>Delete Albums </title>
+</head>
+    <body>
+
+        <ul>
+            {% if albums %}
+            <h1> Which album would you like to delete? </h1>
+                {% for album in albums %}
+                    <li>{{ album[0] }} <br>
+                    
+                    <a href = '/willDelete/{{album[1]}}'> <br>
+                    (click here to delete)</a> 
+                {% endfor %}
+            {%else%}
+                <h1> You have no albums to delete </h1>
+            {%endif%}
+          </ul>
+
+
+
+        <!-- <div>
+            <h3>Which album would you like to add to?</h3>
+            <form>
+            {% if album %}
+                {% for albums in album %}
+                    <label><input type="radio" name="albumName" value="albumName" id="radio"> {{albums[0]}}</label><br>
+                {% endfor %}
+            {% endif %}
+            </form>
+        </div> -->
+        <!-- <input type="submit" value="Delete" /> -->
+        <li><a href='/'>Home</a></li>
+    </body>

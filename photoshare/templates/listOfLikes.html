@@ -1,0 +1,29 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+
+
+<head>
+  <title>Liked Photo</title>
+</head>
+
+<body>
+  <div>
+    <h1> View your Likes! </h1>
+    
+    <!-- Conditional checks to see if a picture has likes  -->
+    {% if photo %}
+      {% if likes %}
+      {% if likeness %}    <!-- idk what this method is, but it think it is to                         check how much a picture is liked. -->
+      {% for like in likes %}
+      {% for photo in pictures %}
+      {% if like[0] == picture[1] %}
+      <img src='data:image/png;base64, {{picture[0]}}'/><br>
+      {{likeness}}    <!-- TODO: need to make a likeness function -->
+      </div>
+      {% endif %}
+      {% endfor %}
+      {% endfor %}
+      {% endif %}
+      {% endif %}
+    {% endif %}
+      <li><a href='/'>Home</a></li>
+</body>

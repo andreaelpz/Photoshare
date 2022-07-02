@@ -1,0 +1,24 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+<!-- remove tags-->
+<head>
+    <title>Remove Tags </title>
+</head>
+<body>
+    <div>
+      <h1> Which photo do you want to remove the tag from? </h1>
+      {% if photoExist %}
+        {% for photo in photoExist %}
+        <form method="post" enctype="multipart/form-data" action="/removeTags">
+        <div class ="form-group">
+        <input type="radio" name="addTag" value="{{photo[1]}}">
+        <img src='data:image/png;base64, {{photo[0]}}'/>
+        <label for="createtag">Remove Tag</label>
+        <input type="text" name="tag" /><br />
+        </div>
+        {% endfor %}
+      {% endif %}
+      <input type="submit" value="Remove" />
+      <li><a href='/'>Home</a></li>
+    </div>
+    </body>
+  

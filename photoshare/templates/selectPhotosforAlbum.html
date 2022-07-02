@@ -1,0 +1,39 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+<head>
+    <title>Select the Photos you want in your Album </title>
+  </head>
+      <div class = "title">
+      <h1> Select the Photos you want in your Album </h1>
+      </div>
+  <body>
+    <div>
+      <h5> Which photos do you want to add?  </h5>
+
+      {% if photos %}
+      <h2>Here are your photos</h2>
+          {% for photo in photos %}
+              {{photo[2]}}<br>
+                  <form method="post" action="/selectPhotosforAlbum">
+                      <input type="radio" name="UPHID" value={{photo[2]}}> <br>
+                      <img src='data:image/jpg;base64, {{ base64.b64encode(photo[0]).decode("ascii") }}'/> <br>
+                  </form>
+          {% endfor %}
+      {% endif %}
+
+
+      <h5>Which album would you like to add to?</h5>
+      <form>
+      {% if album %}
+        {% for albums in album %}
+          <li><a href="/willAddTo/{{albums[1]}}">{{albums[0]}}</a></li><br>
+            
+          </form>
+      </div>
+      {% endfor %}
+    {% endif %}
+
+<br>
+    </form>
+    </div>
+    <li><a href='/'>Home</a></li>    
+  </body>

@@ -1,0 +1,44 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+<head>
+    <title> Comments </title>
+</head>
+    {%if supress%}
+        <h1> Take A Look At What People Have Commented: <a href="/allComments"></a></h1>
+        <body>
+        {% if photos %}
+            {% for photo in photos %}
+                {% if comment %}
+                    {% for comment in comments %}
+                        {{photo[1]}}<br>
+                        <form method="post"  action="/comment">
+                            <p>
+                                <img src='data:image/jpg;base64, {{ base64.b64encode(photo[0]).decode("ascii") }}'/>
+                                COMMENT: {{comment[0]}}
+                            </p>
+                    {% endfor %}
+                {% endif %}
+                        </form>
+            {% endfor %}
+         {% endif %}
+        <li><a href='/'>Home</a></li>
+        </body> 
+    {% endif %}
+    
+        <div class="title">
+            <h1> Comment on the pictures you like! </h1>
+        </div>
+        <body>
+            {% if photos %}
+            <h2>Here are your photos</h2>
+                {% for photo in photos %}
+                    {{photo[1]}}<br>
+                        <form method="post" action="/comment">
+                            <input type="radio" name="UPHID" value={{photo[2]}}> <br>
+                            <img src='data:image/jpg;base64, {{ base64.b64encode(photo[0]).decode("ascii") }}'/> <br>
+                            COMMENT: <input type="text" name="comment" /><br />
+                            <button type="submit" value="comment">Comment</button>
+                        </form>
+                {% endfor %}
+            {% endif %}
+        <li><a href='/'>Home</a></li>
+        </body>

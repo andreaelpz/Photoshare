@@ -1,0 +1,20 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+<head>
+    <title>Upload a photo!</title>
+</head>
+    <body>
+        <div class="title">
+            <h1>Upload a photo to Photoshare</h1>
+        </div>
+            <form method="post" enctype="multipart/form-data" action="/upload">
+                <label for="photo">Select photo:</label>
+                <input type="file" name="photo" required='true' /><br />
+                <label for="caption">Please caption:</label>
+                <input type="text" name="caption" required='true' /><br />
+                <label for="caption">Please write some tags:</label>
+                <input type="text" name="tagged" required='true' /><br />
+                <label for="caption">Which album would you like to add it to?</label>
+                <input type="text" name="albumName" required='true' /><br />
+                <input type="submit" value="Upload" />
+            </form>
+    </body>

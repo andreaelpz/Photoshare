@@ -1,0 +1,56 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+
+<head>
+  <title>Like a Photo</title>
+ </head>
+ <body>
+  <div>
+   <h1> Pick a picture to like: </h1>
+      <body>
+      {% if photos %}
+        {% for photo in photos %}
+            {{photo[1]}}<br>
+             <form method="post" action="/likePhoto">
+              <input type="radio" name="UPHID" value={{photo[2]}}>
+              <img src='data:image/jpg;base64, {{ base64.b64encode(photo[0]).decode("ascii") }}'/>
+              <button type="submit" value="like">Like!</button>
+             </form>
+             {% for comment in comments %}
+               {{comment[1]}}
+             {% endfor %}
+        {% endfor %}
+       {% endif %}
+      <li><a href='/'>Home</a></li>
+      </body>
+
+
+
+<!-- <head>
+  <title>Like a Photo</title>
+</head>
+<body>
+  <div>
+    <h1> Pick a picture to like:  </h1>
+    {% if photos %}
+      {% for photo in photos %}
+      
+
+      {% endfor %}
+    {% endif %}
+      <li><a href='/'>Home</a></li>
+      </body> -->
+
+    <!-- {% if photo %}
+      {% for photo in photos %}
+      <form method="POST" enctype="multipart/form-data" action="/likePhoto">
+      <div class ="form-group">
+      <input type="radio"
+             name= "likePhoto"
+             value=
+             {{picture[1]}}><img src='data:image/png;base64, {{picture[0]}}'/><br>
+      </div>
+      {% endfor %}
+      {% endif %}
+      <button type="submit" value="comment">Like</button>
+      <li><a href='/'>Home</a></li>
+      </body> -->

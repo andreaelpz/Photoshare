@@ -1,0 +1,22 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+
+<head>
+  <title> Albums </title>
+</head>
+{% if not supress%}
+<h1>Your Album Has Been Created: <a href="/albumPOST"> View Album Here!</a></h1>
+{% endif %}
+
+<div class="title">
+    <h1>Create Album</h1>
+</div>
+<body>
+  <form method="post" action="/albumPOST">
+      <label for="createAlbum">Create Album</label>
+      <input type="text" name="createAlbum" /><br />
+      <label for="picInAlbum">Select Picture to add:</label>
+      <input type="file" name="picInAlbum" /><br />
+      <input type="submit" value="Upload" />
+  </form>
+  <li><a href='/'>Home</a></li>
+</body>

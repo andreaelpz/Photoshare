@@ -1,0 +1,23 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+
+
+<head>
+  <title> Photo Comment </title>
+</head>
+<body>
+
+    <h1> Take a look at the comments on your posts! </h1>
+    
+    <!-- checking to see if there is a photo, if so display. -->
+    {% if photos %}
+      <img src='data:image/png;base64, {{photos}}'/>
+    {% endif %}
+    
+    <!-- checking to see if there is a comment, if so display. -->
+    
+    {% if comment %}
+    <h4> comment : {{comment}}</h4>
+    {% endif %}
+
+    <li><a href = '/' Home </a></li>
+</body>

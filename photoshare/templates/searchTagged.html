@@ -1,0 +1,24 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+
+<head>
+    <title>Select the tags</title>
+  </head>
+  <body>
+    <div>
+      <h1> Here are the results for your searched TAG!</h1>
+      <h2>Click which tagged pictures you would like to view: </h2>
+      {% if tags %}
+        {% for tag in tags %}
+        <form method="POST" enctype="multipart/form-data" action="/searchTagged">
+        <div class ="form-group">
+        <input type="radio"
+               name= "tag"
+               value=
+               {{tag}}>{{tag}}<br>
+        </div>
+        {% endfor %}
+        {% endif %}
+        <button type="submit" value="comment">Select</button>
+        <li><a href='/'>Home</a></li>
+        </body>
+  

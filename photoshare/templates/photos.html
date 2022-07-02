@@ -1,0 +1,65 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+
+
+    
+<head>
+  <title> Photos </title>
+</head>
+<div class "title">
+  <h1> Life in Snapshots:</h1>
+  
+<head>
+</div>
+
+{% if photos %}
+<h2>Here are your photos</h2>
+    <ul>
+    {% for photo in photos %}
+
+        <li>{{photo[1]}}<br>
+        <img src='data:image/jpg;base64, {{ base64.b64encode(photo[0]).decode("ascii") }}'/></li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+</div>
+<li><a href = '/'> Home </a></li>
+</body>
+
+
+
+
+
+
+
+
+
+
+<!--  {% if photos %}-->
+<!--  {% for photo in photos %}-->
+<!--<!--      {% if tags %}-->-->
+<!--<!--       {% for tag in tags %}-->-->
+<!--<!--{% if comment %}-->-->
+<!--<!--    {% for comment in comment %}-->-->
+<!--<!--        {% if photo[2] == comment[0] == tag[0] %}-->-->
+<!--        <img src='data:image/png;base64, {{photo[0]}}'/></li>-->
+<!--        <h3> Snapshot:{{photo[0]}}</h3>-->
+<!--        <h5>Comment:{{comment[2]}}</h5>-->
+<!--<!--        <h6> TAG:{{tag[1]}}</h6>-->-->
+<!--<!--  {% endif %}-->-->
+<!--  {% endfor %}-->
+<!--  {% endif %}-->
+
+<!--    {% if photo[2] == tag[0] %}-->
+<!--    <img src='data:image/png;base64, {{photo[0]}}'/></li>-->
+<!--    <h7> {{photo[1]}}</h7>-->
+<!--    <h7> TAG:{{tag[1]}}</h7>-->
+<!--    {% endif %}-->
+<!--  {% endfor %}-->
+<!--  {% endif %}-->
+<!--    <img src='data:image/png;base64, {{photo[0]}}'/></li>-->
+<!--    <h8> {{photo[1]}}</h8>-->
+<!--  {% endfor %}-->
+<!--  {% endif %}-->
+
+

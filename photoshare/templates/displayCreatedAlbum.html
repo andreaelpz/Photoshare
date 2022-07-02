@@ -1,0 +1,29 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+<!-- i think this is where we should be directed after we click inside of one of the albums -->
+<head>
+    <title> Inside Album</title>
+</head>
+<div class "title">
+    <h1> This is the Album </h1>
+</div>
+
+<div>
+    {% for photo in photoExist%}
+        {% if comments %}
+            {% if comments[0] == photo[2]%}
+                {{photo[1]}}<br>
+                <form method="post" action="/likePhoto">
+                    <input type="radio" name="UPHID" value={{photo[2]}}>
+                    <img src='data:image/jpg;base64, {{ base64.b64encode(photo[0]).decode("ascii") }}'/>
+                    <button type="submit" value="like">Like!</button>
+                </form>
+                {% for comment in comments %}
+                    COMMENT: {{comment[1]}}
+                {% endfor %}
+            {%endif%}  
+        {%endif%}
+    {% endfor %}
+</div>
+
+    <li><a href = '/'> Home </a></li>
+</body>

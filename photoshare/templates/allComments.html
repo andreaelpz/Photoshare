@@ -1,0 +1,20 @@
+
+<head>
+    <title> Comments </title>
+</head>
+<h1> Take A Look At What People Have Commented: </h1>
+<body>
+    {% for photo in photos %}
+        {{photo[1]}}<br>
+            <p>
+            <img src='data:image/jpg;base64, {{ base64.b64encode(photo[0]).decode("ascii") }}'/>
+            {% for comments in commentslist[loop.index0] %}
+                <br>
+                {%if photo[2] == comments[1]%} 
+                    {{ comments[0] }}
+                {%endif%}
+            {% endfor %}
+            </p>
+    {% endfor %}
+    <li><a href='/'>Home</a></li>
+</body>

@@ -1,0 +1,19 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+
+
+<head>
+    <title>My Albums</title>
+</head>
+    <body>
+        <div>
+            <h1> Created Albums </h1>
+        {% if albums %}  <!-- need to also create helper function "chooseAlbum", add "albums = getAlbums(UID)"  -->                                                        
+                {% for album in albums %}
+                    <li><a href="/willDisplay/{{album[1]}}">{{album[0]}}</a></li><br>
+                {% endfor %}
+        {% endif %}
+        </div>
+        <li><a href='/'>Home</a></li> 
+    </body>
+
+

@@ -1,0 +1,24 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+
+<head>
+  <title>Delete a Picture </title>
+</head>
+<body>
+  <ul>
+    {% if photos %}
+    <h1> Pick the picture you would like to delete: </h1>
+      {% for photo in photos %}
+        <li>{{ photo[2] }} <br>
+        <!-- {{photo[0]}}</li> -->
+
+        <!-- <img src='data:image/png;base64, {{photo[0]}}'/></li> -->
+        <img src='data:image/jpg;base64, {{ base64.b64encode(photo[1]).decode("ascii") }}'/>
+        <a href = '/toDelete/{{photo[0]}}'> <br>
+        Click to Delete!</a> 
+      {% endfor %}
+  </ul>
+    {%else%}
+      <h1> You have no pictures to delete: </h1>
+    {% endif %}
+      <li><a href='/'>Home</a></li>
+      </body>
